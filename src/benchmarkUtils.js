@@ -34,6 +34,13 @@ const compareWithPrev = (rawResults, name = 'test') => {
       console.table(diff);
     }
   }
+  if (process.argv[2] === 'write') {
+    writeFileSync(
+      `${testRunFolder}/benchmark-run.json`,
+      JSON.stringify(results),
+    );
+    console.log('Previous result updated');
+  }
 };
 
 const fixedTo = (value, descimals) => parseFloat(value.toFixed(descimals));
@@ -51,24 +58,12 @@ const compareWith = (newResult = {}, oldResult = {}) => {
   }, {});
 };
 
-const getWantedValued = obj => {
-  return {
-    '2.5%': obj.p2_5,
-    '50%': obj.p50,
-    '97.5%': obj.p97_5,
-    Average: obj.average,
-    Max: obj.max,
-    Min: obj.min,
-    StdDev: obj.stddev,
-  };
-};
-
 const getResults = event => {
   return event.currentTarget.reduce((result, target) => {
     const { hz, stats, name } = target;
     const count = stats.sample.length;
     const { mean, deviation, rme } = stats;
-    result[name] = {
+    result[name.replace(/\.*/g, '')] = {
       count: Number(count),
       'mean(ms)': fixedTo(mean * 1000, 2),
       'deviation(ms)': fixedTo(deviation * 1000, 2),
@@ -80,4 +75,4 @@ const getResults = event => {
   }, {});
 };
 
-module.exports = { compareWithPrev, getResults };
+module.exports = { compareWithPrev };
