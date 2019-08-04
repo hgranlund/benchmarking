@@ -18,6 +18,15 @@ const charSubstitution = new Map([
   ['"', '\\"'],
   ['\\', '\\\\'],
 ]);
+const meta = {
+  '\b': '\\b',
+  '\t': '\\t',
+  '\n': '\\n',
+  '\f': '\\f',
+  '\r': '\\r',
+  '"': '\\"',
+  '\\': '\\\\',
+};
 
 suite
   .add('fast-stringify', () => {
@@ -66,6 +75,17 @@ suite
   .add('String.replace-map2', () => {
     return hugeString.replace(rxEscapable, char => {
       const key = charSubstitution.get(char);
+      return key
+        ? key
+        : `\\u${char
+            .charCodeAt(0)
+            .toString(16)
+            .padStart(4, '0')}`;
+    });
+  })
+  .add('String.replace-object', () => {
+    return hugeString.replace(rxEscapable, char => {
+      const key = meta[char];
       return key
         ? key
         : `\\u${char

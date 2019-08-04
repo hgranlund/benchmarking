@@ -15,7 +15,7 @@
     "JSONStream": "^1.3.5",
     "benchmark": "^2.1.4",
     "fast-stringify": "^2.0.0",
-    "jetsons": "0.0.4",
+    "jetsons": "0.0.5",
     "json-stream-stringify": "^2.0.1"
   }
 }
