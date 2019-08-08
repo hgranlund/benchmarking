@@ -9,6 +9,18 @@
       "request": "launch",
       "name": "Launch Program",
       "program": "${workspaceFolder}/src/escapeString.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch binaryReplace",
+      "program": "${workspaceFolder}/src/binaryReplace.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch escapeString",
+      "program": "${workspaceFolder}/src/escapeString.js"
     }
   ]
 }

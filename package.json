@@ -16,6 +16,8 @@
     "benchmark": "^2.1.4",
     "fast-stringify": "^2.0.0",
     "jetsons": "0.0.5",
-    "json-stream-stringify": "^2.0.1"
+    "json-stream-stringify": "^2.0.1",
+    "replace-buffer": "^1.2.1",
+    "through2": "^3.0.1"
   }
 }

@@ -36,5 +36,9 @@ suite
   })
   .on('complete', event => {
     compareWithPrev(event, 'stringifyArrayOfArray');
+    console.log(
+      'Fastest is ' + event.currentTarget.filter('fastest').map('name'),
+    );
   })
+
   .run();

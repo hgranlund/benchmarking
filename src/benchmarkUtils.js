@@ -1,6 +1,5 @@
 const { readFileSync, writeFileSync } = require('fs');
 const fs = require('fs');
-
 const createFolders = testRunFolder => {
   if (!fs.existsSync(testRunFolder)) {
     fs.mkdirSync(testRunFolder);
