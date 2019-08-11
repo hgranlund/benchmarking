@@ -49,7 +49,7 @@ const compareWith = (newResult = {}, oldResult = {}) => {
     if (['name', 'node'].includes(key)) {
       result[key] = value;
     } else if (key in oldResult) {
-      result[key] = fixedTo(value - oldResult[key], 2);
+      result[key] = fixedTo(value - oldResult[key], 4);
     } else {
       result[key] = NaN;
     }

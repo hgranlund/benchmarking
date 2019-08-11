@@ -21,6 +21,12 @@
       "request": "launch",
       "name": "Launch escapeString",
       "program": "${workspaceFolder}/src/escapeString.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch binarySplit",
+      "program": "${workspaceFolder}/src/binarySplit/binarySplitBench.js"
     }
   ]
 }
