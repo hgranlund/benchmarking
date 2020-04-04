@@ -25,6 +25,12 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "Launch parseInfluxBench",
+      "program": "${workspaceFolder}/src/parseInflux/parseInfluxBench.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "Launch binarySplit",
       "program": "${workspaceFolder}/src/binarySplit/binarySplitBench.js"
     }
